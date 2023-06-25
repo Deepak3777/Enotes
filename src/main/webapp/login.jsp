@@ -16,38 +16,38 @@
 			<h4>Login</h4>
 			</div>
 			<%
-			String s3=(String)session.getAttribute("add-note-error");
-			if(s3!=null){
+			String noteerror=(String)session.getAttribute("add-note-error");
+			if(noteerror!=null){
 			%>
 			<div class="alert alert-danger alert-dismissible">
 			  <button type="button" class="close" data-dismiss="alert">&times;</button>
-			  <%= s3 %>
+			  <%= noteerror %>
 			</div>			
 			<%} %>
 			<%
-			String s2=(String)session.getAttribute("log-out");
-			if(s2!=null){
+			String logout=(String)session.getAttribute("log-out");
+			if(logout!=null){
 			    response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 
 			%>
 			<div class="alert alert-success alert-dismissible">
 			  <button type="button" class="close" data-dismiss="alert">&times;</button>
-			  <%= s2 %>
+			  <%= logout %>
 			</div>				
 			<%} %>
 			<% 
-			String s=(String)session.getAttribute("f1-msg");
-			if(s!=null){%>
+			String failmsg=(String)session.getAttribute("f1-msg");
+			if(failmsg!=null){%>
 			<div class="alert alert-danger alert-dismissible">
 			  <button type="button" class="close" data-dismiss="alert">&times;</button>
-			  <%= s %>
+			  <%= failmsg %>
 			</div><%}%>
 			<% 
-			String s1=(String)session.getAttribute("s1-msg");
-			if(s1!=null){%>
+			String passmsg=(String)session.getAttribute("s1-msg");
+			if(passmsg!=null){%>
 			<div class="alert alert-success alert-dismissible">
 			  <button type="button" class="close" data-dismiss="alert">&times;</button>
-			  <%= s1 %>
+			  <%= passmsg %>
 			</div><%}%>
 			<div class="card-body">
 			<form action="LogIn" method="post">

@@ -29,18 +29,24 @@
 %>
 
 <div class="container">
-<% String s1=(String)session.getAttribute("suc2-msg"); %>
-<% if(s1!=null){ %>
-	<div class="alert alert-success" role="alert"><%= s1 %></div>
-	<%} %>
-<% String s2=(String)session.getAttribute("suc-msg3"); 
- if(s2!=null){ %>
-	<div class="alert alert-success" role="alert"><%= s2 %></div>
-	<%} %>
-	<% String s3=(String)session.getAttribute("fl-msg2"); 
- if(s3!=null){ %>
-	<div class="alert alert-danger" role="alert"><%= s2 %></div>
-	<%} %>
+<% String passmsg1=(String)session.getAttribute("suc2-msg"); 
+ if(passmsg1!=null){ %>
+			  <div class="alert alert-success alert-dismissible">
+			  <button type="button" class="close" data-dismiss="alert">&times;</button>
+			  <%= passmsg1 %>
+			</div>	<%} %>
+<% String passmsg2=(String)session.getAttribute("suc-msg3"); 
+ if(passmsg2!=null){ %>
+			  <div class="alert alert-success alert-dismissible">
+			  <button type="button" class="close" data-dismiss="alert">&times;</button>
+			  <%= passmsg2 %>
+			</div>	<%} %>
+<% String failmsg1=(String)session.getAttribute("fl-msg2"); 
+ if(failmsg1!=null){ %>
+			  <div class="alert alert-danger alert-dismissible">
+			  <button type="button" class="close" data-dismiss="alert">&times;</button>
+			  <%= failmsg1 %>
+			</div>	<%} %>
 <h2 class="text-center">All Notes :</h2>
 <div class="row">
 <div class="col-md-12">
@@ -81,3 +87,4 @@
 
 </body>
 </html>
+
